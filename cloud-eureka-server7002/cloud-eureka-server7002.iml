@@ -7,8 +7,6 @@
         <sourceRoots>
           <root url="file://$MODULE_DIR$/src/main/java" />
           <root url="file://$MODULE_DIR$/src/main/resources" />
-          <root url="file://$MODULE_DIR$/../cloud-eureka-server7002/src/main/java" />
-          <root url="file://$MODULE_DIR$/../cloud-eureka-server7002/src/main/resources" />
         </sourceRoots>
       </configuration>
     </facet>
@@ -17,22 +15,13 @@
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
-    <output url="file://$MODULE_DIR$/../cloud-eureka-server7002/target/classes" />
-    <output-test url="file://$MODULE_DIR$/../cloud-eureka-server7002/target/test-classes" />
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
-    </content>
-    <content url="file://$MODULE_DIR$/../cloud-eureka-server7002/src/main/java">
-      <sourceFolder url="file://$MODULE_DIR$/../cloud-eureka-server7002/src/main/java" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../cloud-eureka-server7002/src/main/resources">
-      <sourceFolder url="file://$MODULE_DIR$/../cloud-eureka-server7002/src/main/resources" type="java-resource" />
-    </content>
-    <content url="file://$MODULE_DIR$/../cloud-eureka-server7002/src/test/java">
-      <sourceFolder url="file://$MODULE_DIR$/../cloud-eureka-server7002/src/test/java" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
