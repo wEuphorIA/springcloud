@@ -3,6 +3,7 @@ package com.atguigu.springcloud.controller;
 import com.atguigu.springcloud.entities.CommonResult;
 import com.atguigu.springcloud.entities.Payment;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,6 +35,29 @@ public class OrderController {
     @GetMapping("/consumer/payment/get/{id}")
     public CommonResult<Payment> getPayment(@PathVariable("id") Long id){
         return restTemplate.getForObject(PAYMENT_URL+"/payment/get/"+id,CommonResult.class);
+    }
+
+    @GetMapping("/consumer/payment/getForEntity/{id}")
+    public CommonResult<Payment> getPayment2(@PathVariable("id") Long id){
+        ResponseEntity<CommonResult> entity = restTemplate.getForEntity(PAYMENT_URL+"/payment/get/"+id,CommonResult.class);
+        if(entity.getStatusCode().is2xxSuccessful()){
+            log.info(entity.getStatusCode() + "\t" + entity.getHeaders());
+            return entity.getBody();
+        }else {
+            return new CommonResult<>(444,"操作失败");
+        }
+    }
+    @GetMapping("/consumer/payment/createEntity")
+    public CommonResult<Payment> create2(Payment payment){
+        log.info("********插入的数据：" + payment);
+        //postForObject分别有三个参数：请求地址，请求参数，返回的对象类型
+//        return restTemplate.postForObject(PAYMENT_URL + "/payment/create", payment, CommonResult.class);
+        ResponseEntity<CommonResult> entity = restTemplate.postForEntity(PAYMENT_URL + "/payment/create", payment, CommonResult.class);
+        if(entity.getStatusCode().is2xxSuccessful()){
+            return entity.getBody();
+        }else{
+            return new CommonResult<>(444, "操作失败");
+        }
     }
 
 }
