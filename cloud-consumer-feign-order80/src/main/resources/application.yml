@@ -14,3 +14,10 @@ ribbon:
   ReadTimeout: 5000
   #指的是建立连接使用的时间，适用于网络状况正常的情况下，两端连接所用的时间
   ConnectTimeout: 5000
+
+
+#开启日志的feign客户端
+logging:
+  level:
+    #feign日志以什么级别监控哪个接口
+    com.atguigu.springvloud.service.PaymentFeignService: debug	#写你们自己的包名
