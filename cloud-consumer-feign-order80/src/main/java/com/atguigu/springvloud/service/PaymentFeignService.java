@@ -20,4 +20,8 @@ public interface PaymentFeignService {
     //直接复制8001的方法
     @GetMapping("/payment/get/{id}")
     CommonResult<Payment> getPaymentById(@PathVariable("id") Long id);
+
+    @GetMapping("/payment/feign/timeout")
+    String paymentFeignTimeout();
+
 }
